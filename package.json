@@ -1,0 +1,48 @@
+{
+  "name": "tp-dsw-backend-2025",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./dist/app.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mikro-orm/core": "^6.4.16",
+    "@mikro-orm/mongo-highlighter": "^1.0.0",
+    "@mikro-orm/mongodb": "^6.4.16",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mongodb": "^4.0.7",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.20.0",
+    "morgan": "^1.10.1",
+    "node-fetch": "2",
+    "nodemailer": "^7.0.3",
+    "reflect-metadata": "^0.2.2",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "^6.4.16",
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.0.3",
+    "@types/node-fetch": "2",
+    "@types/nodemailer": "^6.4.17",
+    "csv-parse": "^6.1.0",
+    "csv-stringify": "^6.6.0",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "6.0.4",
+    "tsx": "^4.20.5",
+    "typescript": "^5.1.3"
+  }
+}

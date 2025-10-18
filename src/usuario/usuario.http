@@ -1,0 +1,21 @@
+### REGISTRO DE USUARIO
+POST http://localhost:3000/usuarios/registro
+Content-Type: application/json
+
+{
+  "nombre": "Laura",
+  "apellido": "Calvi",
+  "email": "admin@parkeasy.com",
+  "contrasena": "123456",
+  "rol": "admin"
+}
+
+
+### LOGIN DE USUARIO
+POST http://localhost:3000/usuarios/login
+Content-Type: application/json
+
+{
+  "email": "admin@parkeasy.com",
+  "contrasena": "123456"
+}

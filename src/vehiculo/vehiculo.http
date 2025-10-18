@@ -1,0 +1,30 @@
+### Crear vehículo
+POST http://localhost:3000/vehiculos
+Content-Type: application/json
+
+{
+  "marca": "Toyota",
+  "modelo": "Corolla",
+  "patente": "ABC123",
+  "tipo": "68dc10b45abf6603fa85fc64",
+  "usuario": "68dc10b45abf6603fa85fc99"
+}
+
+### Listar vehículos
+GET http://localhost:3000/vehiculos
+
+
+### Actualizar vehículo
+PUT http://localhost:3000/vehiculos/68dc11585abf6603fa85fc66
+Content-Type: application/json
+
+{
+  "marca": "Renault",
+  "modelo": "Sandero",
+  "patente": "XYZ789",
+  "tipo": "68dc10b45abf6603fa85fc64",
+  "usuario": "68dc10b45abf6603fa85fc99"
+}
+
+### Eliminar vehículo
+DELETE http://localhost:3000/vehiculos/68dc11585abf6603fa85fc66

@@ -1,0 +1,31 @@
+
+### Crear cochera
+POST http://localhost:3000/estacionamientos/68b5e24c8be9a2e337edd692/cocheras
+Content-Type: application/json
+
+{
+  "numero": 1,
+  "estado": "libre",
+  "dimensiones": { "ancho": 2.5, "largo": 5 },
+  "userId": "68b0b19313818b4d12d9dab4"
+}
+
+### Listar todas las cocheras
+GET http://localhost:3000/cocheras
+
+### Obtener una cochera por ID
+GET http://localhost:3000/cocheras/68ca5f867a9372ad62464dd6
+
+### Reservar cochera
+PUT http://localhost:3000/cocheras/68ca5f867a9372ad62464dd6/reservar
+
+### Liberar cochera
+PUT http://localhost:3000/cocheras/68dc44e4c16e32d2c37c9073/liberar
+Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
+### Eliminar cochera
+DELETE http://localhost:3000/cocheras/68b0766d135629aad8517778?userId=68b0b19313818b4d12d9dab4
+
+
+
+
+

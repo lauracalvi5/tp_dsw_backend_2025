@@ -1,0 +1,35 @@
+### Crear estacionamiento
+POST http://localhost:3000/estacionamientos
+Content-Type: application/json
+
+{
+  "nombre": "Parking Centro",
+  "direccion": "Av. Pellegrini 1200",
+  "lat": -32.9442,
+  "lng": -60.6505,
+  "capacidad": 50,
+  "precioHora": 200
+}
+
+### Listar todos los estacionamientos
+GET http://localhost:3000/estacionamientos
+
+### Obtener un estacionamiento por ID
+GET http://localhost:3000/estacionamientos/68b06b799f717b8a0bfc3ad1
+
+### Actualizar estacionamiento
+PUT http://localhost:3000/estacionamientos/68b06b799f717b8a0bfc3ad1
+Content-Type: application/json
+
+{
+  "nombre": "Parking Centro Actualizado",
+  "direccion": "Av. Pellegrini 1500",
+  "capacidad": 60,
+  "precioHora": 250
+}
+
+### Eliminar estacionamiento
+DELETE http://localhost:3000/estacionamientos/68b06b799f717b8a0bfc3ad1
+
+### Listar estacionamientos disponibles (con filtros)
+GET http://localhost:3000/estacionamientos-disponibles?precioMin=100&precioMax=300&lat=-32.94&lng=-60.65&orden=distancia

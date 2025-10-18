@@ -1,0 +1,22 @@
+### Crear tipo de vehículo
+POST http://localhost:3000/tipos-vehiculo
+Content-Type: application/json
+
+{
+  "descripcion": "Camioneta"
+}
+
+### Listar tipos de vehículo
+GET http://localhost:3000/tipos-vehiculo
+
+
+### Actualizar tipo de vehículo
+PUT http://localhost:3000/tipos-vehiculo/68dc10b45abf6603fa85fc64
+Content-Type: application/json
+
+{
+  "descripcion": "Moto"
+}
+
+### Eliminar tipo de vehículo
+DELETE http://localhost:3000/tipos-vehiculo/68dc10b45abf6603fa85fc64
