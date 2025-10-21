@@ -67,8 +67,7 @@ Base de datos: `parkEasy`.
 
 - **Helmet:** cabeceras seguras.  
 - **CORS:** configurado con medidas anti-MIME sniffing, X-Frame-Options y protección XSS.  
-- **Rate limiting:** global de 200 solicitudes/15 min; login limitado a 7 intentos/15 min.  
-- **Logs y sanitización:** registro de actividad y eliminación de scripts embebidos.  
+- **Rate limiting:** global de 200 solicitudes/15 min; login limitado a 7 intentos/15 min.   
 - **Autenticación:** mediante JWT (`Authorization: Bearer <token>`).  
 - **Autorización:** validación de roles (`cliente` o `admin`).
 
@@ -120,10 +119,7 @@ Archivo principal: `src/socket.ts`.
   - `message`: recepción y retransmisión de mensajes.
   - `disconnect`: log de desconexión.
 
-**Uso en defensa:**  
-Demostración de envío y recepción de mensajes en tiempo real entre dos clientes.
 
----
 
 ## API REST
 
@@ -137,40 +133,6 @@ Autenticación mediante JWT donde corresponda.
 4. **Estacionamientos:** creación, listado, filtrado, actualización y eliminación (JWT + admin).  
 5. **Cocheras:** reserva, cancelación y administración (JWT / admin).
 
----
-
-## Casos de uso demostrables
-
-1. Registro y login de administrador.  
-2. Alta de tipo de vehículo.  
-3. Alta de estacionamiento con generación automática de cocheras.  
-4. Alta de vehículo por usuario cliente.  
-5. Búsqueda de estacionamientos disponibles.  
-6. Reserva de cochera.  
-7. Cancelación de reserva.  
-8. Comunicación en tiempo real con Socket.IO.
-
----
-
-## Consideraciones y decisiones
-
-- El cálculo de cocheras libres se realiza por agregación en MongoDB.  
-- Los filtros geográficos emplean fórmula de Haversine y bounding box.  
-- La colección espejo `estacionamientos2` se usa para búsquedas y control.  
-- Limitador de solicitudes en login para evitar ataques de fuerza bruta.  
-- Sanitización básica de payloads para prevenir inyección de scripts.
-
----
-
-## Limitaciones y posibles mejoras
-
-- Falta de tests automatizados.  
-- JWT sin refresh tokens (expira en 24 h).  
-- Manejo simple de roles.  
-- SMTP embebido en código (mover a variables de entorno).  
-- No se emplean índices geoespaciales en MongoDB (posible mejora con `2dsphere`).
-
----
 
 ## Scripts y build
 
@@ -199,11 +161,3 @@ Autenticación mediante JWT donde corresponda.
 - `/estacionamientos`, `/estacionamientos/:id`, `/estacionamientos-disponibles`, `/estacionamientos2/buscar`  
 - `/cocheras`, `/cocheras/libres`, `/cocheras/mis-reservas`, `/cocheras/reservar`, `/cocheras/:id/cancelar`, `/cocheras/:id/liberar`
 
----
-
-## Anexos
-
-- Diagrama de dominio: `img/modelo_de_dominio_tpdsw.png`  
-- Código fuente: ver estructura del repositorio.
-
----
