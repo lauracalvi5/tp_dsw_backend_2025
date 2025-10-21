@@ -1,32 +1,17 @@
-# ParkEasy — Documentación para defensa del proyecto
+# ParkEasy — Documentación 
 
 > Plataforma para búsqueda y reserva de estacionamientos.  
 > Backend desarrollado en **Node.js + Express**, con persistencia en **MongoDB** mediante **MikroORM** y comunicacion en tiempo real con **Socket.IO**.
 
----
-
-## Resumen ejecutivo
 
 **Objetivo:**  
 Permitir que los usuarios encuentren cocheras disponibles, filtren por ubicación o precio y gestionen sus reservas.
 
 
 
-## Modelo de dominio
-
-![Modelo de dominio](img/modelo_de_dominio_tpdsw.png)
-
 **Entidades principales:**  
 Usuario, TipoVehiculo, Vehiculo, Estacionamiento, Cochera.
 
-**Relaciones clave:**
-- Vehiculo → TipoVehiculo (ManyToOne)
-- Vehiculo → Usuario (ManyToOne)
-- Estacionamiento → Cochera (OneToMany)
-- Cochera → Estacionamiento (ManyToOne)
-- Cochera → Usuario (ManyToOne, nullable)
-
----
 
 ## Arquitectura y tecnologías
 
@@ -47,7 +32,6 @@ src/
 └── {usuario, tipo_vehiculo, vehiculo, estacionamiento, cochera}/
 ```
 
----
 
 ## Configuración y ejecución local
 
