@@ -38,7 +38,16 @@ export const validarLogin = (req: Request, res: Response, next: NextFunction) =>
 };
 
 export const validarEstacionamiento = (req: Request, res: Response, next: NextFunction) => {
-  const { nombre, direccion, capacidad, precioHora } = req.body;
+  const { nombre, direccion} = req.body;
+
+  const toNum = (v: any) => (v === '' || v === null || v === undefined) ? NaN : Number(v);
+  req.body.capacidad   = toNum(req.body.capacidad);
+  req.body.precioHora  = toNum(req.body.precioHora);
+  req.body.lat         = toNum(req.body.lat);
+  req.body.lng         = toNum(req.body.lng);
+
+  const { capacidad, precioHora, lat, lng } = req.body;
+  const { activo, horarioApertura, horarioCierre } = req.body;
   
   if (!nombre || nombre.trim().length < 3) {
     res.status(400).json({ mensaje: 'El nombre debe tener al menos 3 caracteres' });
@@ -59,7 +68,6 @@ export const validarEstacionamiento = (req: Request, res: Response, next: NextFu
     return;
   }
 
-  const { lat, lng, activo, horarioApertura, horarioCierre } = req.body;
   if (lat === undefined || lng === undefined) {
     res.status(400).json({ mensaje: 'Latitud y longitud son requeridas' });
     return;
@@ -129,4 +137,3 @@ export const validarVehiculo = (req: Request, res: Response, next: NextFunction)
 
   next();
 };
-

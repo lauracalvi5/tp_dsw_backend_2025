@@ -20,7 +20,6 @@ export class Cochera extends BaseEntity {
   @Property({ type: Date, nullable: true })
   fechaFin?: Date;
 
-
   @ManyToOne('Estacionamiento')
   estacionamiento!: any; 
 
